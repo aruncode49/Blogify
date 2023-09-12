@@ -3,10 +3,16 @@ import express from "express";
 const app = express();
 const PORT = 3000 || process.env.PORT;
 
-// ROUTES
+// serve static files
+app.use(express.static("public"));
+
+// set view engine
+app.set("view engine", "ejs");
+
+// routes
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  return res.render("home");
 });
 
-// PORT LISTENING
+// port listening
 app.listen(PORT, () => console.log(`Server is listening on port: ${PORT}`));
