@@ -2,7 +2,11 @@ const express = require("express");
 const router = express.Router();
 
 // import controller functions
-const { signupPost, loginPost } = require("../controllers/userController");
+const {
+  signupPost,
+  loginPost,
+  getDashboard,
+} = require("../controllers/userController");
 const { verifyToken } = require("../service/auth");
 
 // signup -> Get
@@ -22,9 +26,7 @@ router.post("/signup", signupPost);
 router.post("/login", loginPost);
 
 // dashboard -> Get
-router.get("/dashboard/:id", verifyToken, (req, res) => {
-  return res.render("dashboard");
-});
+router.get("/dashboard/:id", verifyToken, getDashboard);
 
 // logout -> post
 router.post("/logout", verifyToken, (req, res) => {

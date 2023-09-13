@@ -2,10 +2,17 @@
 
 <div class="container dashboard">
   <!-- if post collection is empty -->
+
+  <% if (allBlogs.length === 0) { %>
   <div class="add_blog">
     <h1>Add Your First Blog</h1>
     <a href="/blog/add-new">Add+</a>
   </div>
+  <% } else { %>
+
+  <h1>All Blogs</h1>
+
+  <% } %>
 
   <!-- if any data in post collection -->
   <!-- <div></div> -->

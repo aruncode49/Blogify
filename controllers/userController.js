@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 
 const User = require("../models/userModel");
+const Blog = require("../models/blogModel");
 const { createTokenForUser } = require("../service/auth");
 
 // signup -> Post Controller
@@ -48,7 +49,20 @@ const loginPost = async (req, res) => {
   }
 };
 
+// Dashboard -> Get Controller
+const getDashboard = async (req, res) => {
+  try {
+    const allBlogs = await Blog.find({ createdBy: req.params.id });
+    return res.render("dashboard", {
+      allBlogs: allBlogs,
+    });
+  } catch (error) {
+    console.log(`Error in getDashboard controller: ${error}`);
+  }
+};
+
 module.exports = {
   signupPost,
   loginPost,
+  getDashboard,
 };
