@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
+const cookieParser = require("cookie-parser");
 
 const userRoutes = require("./routes/userRoutes");
 const connectMongoDB = require("./service/db");
@@ -18,6 +19,7 @@ app.use(express.static("public"));
 // middlewares
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cookieParser());
 
 // set view engine
 app.set("view engine", "ejs");
