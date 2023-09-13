@@ -90,6 +90,7 @@ body {
   font-size: 1rem;
   outline: none;
   margin-bottom: 5px;
+  border-radius: 5px;
 }
 
 .signup_submit_btn{
@@ -119,6 +120,21 @@ body {
 
 /* login form */
 
+.login_submit_btn{
+  margin-top: 20px;
+  padding: 8px;
+  font-size: 1.25rem;
+  background-color: rgb(29, 181, 29);
+  color: white;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.login_submit_btn:hover{
+  background-color: rgb(25, 153, 25);
+}
 
 /* footer */
 .footer {

@@ -1,11 +1,8 @@
 <%- include('./partials/header') %>
 
 <div class="container form">
-  <h1 class="form__heading">Sign Up</h1>
-  <form action="/user/signup" method="POST" class="form__control">
-    <label for="name" class="signup__name">Name</label>
-    <input type="text" id="name" name="name" placeholder="Enter your name" required/>
-
+  <h1 class="form__heading">Log In</h1>
+  <form action="/user/login" method="POST" class="form__control">
     <label for="email" class="signup__email">Email</label>
     <input
       type="email"
@@ -24,9 +21,9 @@
       required
     />
 
-    <button type="submit" class="signup_submit_btn">Register</button>
+    <button type="submit" class="login_submit_btn">Login</button>
 
-    <p class="form__last__msg">Already have an account? <a class="form_redirect_link" href="/user/login">Login</a></p>
+    <p class="form__last__msg">If you don't have an account? <a class="form_redirect_link" href="/user/signup">Register</a></p>
   </form>
 </div>
 
