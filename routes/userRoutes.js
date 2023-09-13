@@ -1,7 +1,7 @@
 const express = require("express");
 
 // import controller functions
-const { signupPost } = require("../controllers/userController");
+const { signupPost, loginPost } = require("../controllers/userController");
 
 const router = express.Router();
 
@@ -19,5 +19,11 @@ router.get("/login", (req, res) => {
 router.post("/signup", signupPost);
 
 // login -> Post
+router.post("/login", loginPost);
+
+// dashboard -> Get
+router.get("/dashboard", (req, res) => {
+  return res.render("dashboard");
+});
 
 module.exports = router;

@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 
 const User = require("../models/userModel");
+const { createTokenForUser } = require("../service/auth");
 
 // signup -> Post Controller
 const signupPost = async (req, res) => {
@@ -19,6 +20,35 @@ const signupPost = async (req, res) => {
   }
 };
 
+// login -> Post Controller
+const loginPost = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    // find user from email
+    const user = await User.findOne({ email });
+
+    if (user) {
+      // match password
+      const isPasswordMatch = await bcrypt.compare(password, user.password);
+
+      if (isPasswordMatch) {
+        // crete json web token
+
+        const token = createTokenForUser(user);
+        res.cookie("token", token);
+
+        return res.redirect("/user/dashboard");
+      }
+      throw Error("Please enter correct password!");
+    }
+    throw Error("Invalid email address!");
+  } catch (error) {
+    console.log(`Errors in login post controller : ${error}`);
+  }
+};
+
 module.exports = {
   signupPost,
+  loginPost,
 };

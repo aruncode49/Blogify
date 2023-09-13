@@ -4,7 +4,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 const userRoutes = require("./routes/userRoutes");
-const connectMongoDB = require("./server/db");
+const connectMongoDB = require("./service/db");
 
 const app = express();
 const PORT = 3000 || process.env.PORT;
