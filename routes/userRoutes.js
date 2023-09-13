@@ -1,10 +1,9 @@
 const express = require("express");
+const router = express.Router();
 
 // import controller functions
 const { signupPost, loginPost } = require("../controllers/userController");
 const { verifyToken } = require("../service/auth");
-
-const router = express.Router();
 
 // signup -> Get
 router.get("/signup", (req, res) => {
