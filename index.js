@@ -1,9 +1,14 @@
 const express = require("express");
+const mongoose = require("mongoose");
 
-const userRoutes = require("./routes/user");
+const userRoutes = require("./routes/userRoutes");
+const connectMongoDB = require("./server/db");
 
 const app = express();
 const PORT = 3000 || process.env.PORT;
+
+// connect mongodb
+connectMongoDB();
 
 // serve static files
 app.use(express.static("public"));
