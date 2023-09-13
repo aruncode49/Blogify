@@ -7,6 +7,7 @@ const cookieParser = require("cookie-parser");
 const userRoutes = require("./routes/userRoutes");
 const blogRoutes = require("./routes/blogRoutes");
 const connectMongoDB = require("./service/db");
+const { verifyToken } = require("./service/auth");
 
 const app = express();
 const PORT = 3000 || process.env.PORT;
@@ -31,7 +32,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/user", userRoutes);
-app.use("/blog", blogRoutes);
+app.use("/blog", verifyToken, blogRoutes);
 
 // port listening
 app.listen(PORT, () => console.log(`Server is listening on port: ${PORT}`));

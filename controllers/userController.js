@@ -38,7 +38,7 @@ const loginPost = async (req, res) => {
         const token = createTokenForUser(user);
         res.cookie("token", token);
 
-        return res.redirect("/user/dashboard");
+        return res.redirect(`/user/dashboard/${user._id}`);
       }
       throw Error("Please enter correct password!");
     }

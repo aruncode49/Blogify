@@ -22,7 +22,7 @@ router.post("/signup", signupPost);
 router.post("/login", loginPost);
 
 // dashboard -> Get
-router.get("/dashboard", verifyToken, (req, res) => {
+router.get("/dashboard/:id", verifyToken, (req, res) => {
   return res.render("dashboard");
 });
 
