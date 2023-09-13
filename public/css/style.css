@@ -16,28 +16,26 @@ body {
 
 /* main */
 
-
-.main{
+.main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.title{
+.title {
   text-align: center;
-  color: rgb(201, 201, 201);
+  color: rgb(230, 229, 229);
   font-size: 3rem;
 }
 
-.main__btn{
+.main__btn {
   display: flex;
   gap: 50px;
   margin-bottom: 40px;
-
 }
 
-.auth__btn{
+.auth__btn {
   text-decoration: none;
   font-size: 1.25rem;
   color: white;
@@ -45,24 +43,85 @@ body {
   border-radius: 5px;
 }
 
-.signup__btn{
+.signup__btn {
   background-color: rgb(0, 104, 223);
 }
 
-.login__btn{
-  background-color: rgb(30, 143, 30)
+.login__btn {
+  background-color: rgb(30, 143, 30);
 }
 
-.main__image{
+.main__image {
   max-width: 300px;
   filter: drop-shadow(0px 44px 34px rgba(147, 230, 126, 0.25));
   overflow: hidden;
   border-radius: 10px;
-  
 }
 
+/* SignUp Form */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form__heading {
+  font-size: 2.5rem;
+  color: rgb(230, 229, 229);
+}
+
+.form__control{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 5px;
+  width: 350px;
+  padding: 10px 20px;
+}
+
+.form__control label{
+  font-size: 1.25rem;
+}
+
+.form__control input{
+  padding: 10px;
+  font-size: 1rem;
+  outline: none;
+  margin-bottom: 5px;
+}
+
+.signup_submit_btn{
+  margin-top: 20px;
+  padding: 8px;
+  font-size: 1.25rem;
+  background-color: rgb(0, 104, 223);
+  color: white;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.signup_submit_btn:hover{
+  background-color: rgb(14, 122, 246);
+}
+
+.form__last__msg{
+  text-align: center;
+}
+
+.form_redirect_link{
+  text-decoration: none;
+  color: antiquewhite;
+}
+
+/* login form */
+
+
 /* footer */
-.footer{
+.footer {
   color: rgb(201, 201, 201);
   margin: 3rem;
   text-align: center;
