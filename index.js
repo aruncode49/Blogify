@@ -13,6 +13,10 @@ connectMongoDB();
 // serve static files
 app.use(express.static("public"));
 
+// middlewares
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 // set view engine
 app.set("view engine", "ejs");
 
