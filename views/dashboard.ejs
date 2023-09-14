@@ -10,12 +10,31 @@
   </div>
   <% } else { %>
 
-  <h1>All Blogs</h1>
+  <!-- Render all blogs -->
+  <div class="allBlogs">
+    <% allBlogs.forEach(blog => { %>
 
+    <a class="blog-link" href="/blog/<%= blog.id %>">
+      <div class="blog-card">
+        <div class="blog-title"><%= blog.title %></div>
+        <div class="blog-btn">
+          <!-- edit patch route -->
+          <form action="/blog/edit/<%= blog._id %>" method="post">
+            <input type="submit" value="Edit" class="edit-btn" />
+          </form>
+          <!-- delete blog route -->
+          <form action="/blog/delete/<%= blog._id %>" method="post">
+            <input type="submit" value="Delete" class="delete-btn" />
+          </form>
+        </div>
+      </div>
+    </a>
+
+    <% }) %>
+  </div>
+
+  <a class="add-new-blog" href="/blog/add-new">Add</a>
   <% } %>
-
-  <!-- if any data in post collection -->
-  <!-- <div></div> -->
 </div>
 
 <%- include('./partials/footer') %>
