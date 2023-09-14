@@ -19,11 +19,13 @@
         <div class="blog-title"><%= blog.title %></div>
         <div class="blog-btn">
           <!-- edit patch route -->
-          <form action="/blog/edit/<%= blog._id %>" method="post">
-            <input type="submit" value="Edit" class="edit-btn" />
-          </form>
+          <a href="/blog/edit/<%= blog._id %>" class="edit-btn">Edit</a>
+
           <!-- delete blog route -->
-          <form action="/blog/delete/<%= blog._id %>" method="post">
+          <form
+            action="/blog/delete/<%= blog._id %>?.method=DELETE"
+            method="post"
+          >
             <input type="submit" value="Delete" class="delete-btn" />
           </form>
         </div>

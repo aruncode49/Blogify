@@ -296,6 +296,11 @@ textarea {
   border: none;
   font-size: 1.25rem;
   border-radius: 5px;
+  text-decoration: none;
+}
+
+.delete-btn {
+  padding: 10px 12px;
 }
 
 .add-new-blog {

@@ -61,8 +61,14 @@ const getDashboard = async (req, res) => {
   }
 };
 
+const logOutHandler = (req, res) => {
+  const loggedInUser = req.userId;
+  return res.clearCookie("token").redirect("/user/login");
+};
+
 module.exports = {
   signupPost,
   loginPost,
   getDashboard,
+  logOutHandler,
 };

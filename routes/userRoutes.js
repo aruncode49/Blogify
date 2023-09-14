@@ -6,6 +6,7 @@ const {
   signupPost,
   loginPost,
   getDashboard,
+  logOutHandler,
 } = require("../controllers/userController");
 const { verifyToken } = require("../service/auth");
 
@@ -29,10 +30,6 @@ router.post("/login", loginPost);
 router.get("/dashboard/:id", verifyToken, getDashboard);
 
 // logout -> post
-router.post("/logout", verifyToken, (req, res) => {
-  const loggedInUser = req.userId;
-  console.log(loggedInUser);
-  return res.clearCookie("token").redirect("/user/login");
-});
+router.post("/logout", verifyToken, logOutHandler);
 
 module.exports = router;

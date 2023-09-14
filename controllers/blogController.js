@@ -26,7 +26,37 @@ const getBlogById = async (req, res) => {
   }
 };
 
+// getEditPageById
+const getEditPageById = async (req, res) => {
+  try {
+    const blog = await Blog.findOne({ _id: req.params.id });
+    return res.render("editBlog", {
+      blog: blog,
+    });
+  } catch (error) {
+    console.log(`Error inside getEditPageById: ${error}`);
+  }
+};
+
+// editPostById
+const editPostById = async (req, res) => {
+  try {
+    const { title, description } = req.body;
+    const blog = await Blog.findByIdAndUpdate(req.params.id, {
+      title: title,
+      description: description,
+    });
+    return res.redirect(`/user/dashboard/${blog.createdBy}`);
+  } catch (error) {
+    console.log(`Error inside editPostById: ${error}`);
+  }
+};
+
+// editBlogById
+
 module.exports = {
   addNewPost,
   getBlogById,
+  getEditPageById,
+  editPostById,
 };
