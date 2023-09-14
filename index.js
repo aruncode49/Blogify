@@ -10,7 +10,7 @@ const connectMongoDB = require("./service/db");
 const { verifyToken } = require("./service/auth");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 // connect mongodb
 connectMongoDB();
