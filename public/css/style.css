@@ -245,7 +245,7 @@ body {
   background-color: rgb(230, 229, 229);
 }
 
-.blog_form textarea::placeholder {
+textarea {
   font-family: "Poppins", sans-serif;
 }
 
@@ -311,6 +311,42 @@ body {
   color: white;
 }
 
+/* Get Blog */
+
+.get-blog {
+  padding: 0 10px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.get-blog h1 {
+  font-size: 3rem;
+  color: lightyellow;
+}
+
+.get-blog p {
+  font-size: 1.5rem;
+  color: lightgray;
+}
+
+.get-blog-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.get-blog-links a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  padding: 0 8px;
+  border-radius: 50%;
+}
+
+.get-blog-links .pencil-emoji {
+  transform: rotate(45deg);
+}
+
 /* media query */
 @media screen and (max-width: 500px) {
   .admin_name_logo {
@@ -328,5 +364,18 @@ body {
   .edit-btn,
   .delete-btn {
     font-size: 1rem;
+  }
+
+  .get-blog h1 {
+    font-size: 2rem;
+  }
+
+  .get-blog p {
+    font-size: 1rem;
+  }
+
+  .get-blog-links a {
+    font-size: 1.5rem;
+    padding: 0 6px;
   }
 }

@@ -14,6 +14,19 @@ const addNewPost = async (req, res) => {
   }
 };
 
+// getBlogById
+const getBlogById = async (req, res) => {
+  try {
+    const blog = await Blog.findOne({ _id: req.params.id });
+    return res.render("getBlog", {
+      blog: blog,
+    });
+  } catch (error) {
+    console.log(`Error inside getBlogById: ${error}`);
+  }
+};
+
 module.exports = {
   addNewPost,
+  getBlogById,
 };
