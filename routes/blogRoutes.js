@@ -6,6 +6,7 @@ const {
   getBlogById,
   getEditPageById,
   editPostById,
+  deletePostById,
 } = require("../controllers/blogController");
 
 // Get -> /blog/add-new
@@ -24,5 +25,8 @@ router.get("/edit/:id", getEditPageById);
 
 // Patch -> blog/edit/:id
 router.patch("/edit/:id", editPostById);
+
+// Delete -> blog/delete/:id
+router.delete("/delete/:id", deletePostById);
 
 module.exports = router;

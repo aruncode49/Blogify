@@ -52,6 +52,16 @@ const editPostById = async (req, res) => {
   }
 };
 
+// deletePostById
+const deletePostById = async (req, res) => {
+  try {
+    const blog = await Blog.findByIdAndDelete(req.params.id);
+    return res.redirect(`/user/dashboard/${blog.createdBy}`);
+  } catch (error) {
+    console.log(`Error inside deletePostById: ${error}`);
+  }
+};
+
 // editBlogById
 
 module.exports = {
@@ -59,4 +69,5 @@ module.exports = {
   getBlogById,
   getEditPageById,
   editPostById,
+  deletePostById,
 };
